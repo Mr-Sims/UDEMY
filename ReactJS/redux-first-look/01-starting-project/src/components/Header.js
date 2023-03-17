@@ -12,7 +12,7 @@ const Header = () => {
 
   const logoutHandler = (event) => {
     event.preventDefault();
-    dispatch(authActions.logout())
+    dispatch(authActions.logout());
 
   }
 
