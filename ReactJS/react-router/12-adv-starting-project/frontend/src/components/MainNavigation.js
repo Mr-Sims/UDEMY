@@ -16,9 +16,6 @@ function MainNavigation() {
               end
             >Events</NavLink>
           </li>
-          <li>
-            <NavLink to='/events/new' className={({ isActive }) => isActive ? classes.active : undefined}>Create New Event</NavLink>
-          </li>
         </ul>
       </nav>
     </header>
