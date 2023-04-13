@@ -1,18 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    },
-    {
-      "id": "e2",
-      "title": "Another dummy event",
-      "date": "2023-02-25",
-      "image": "https://imageio.forbes.com/specials-images/imageserve/60390c54fa76f91deeaa0eef/Business-people-attending-a-seminar-with-social-distancing-and-face-mask/960x0.jpg?format=jpg&width=960",
-      "description": "If you missed our last event, here`s a chance to make up for it!"
-    }
-  ]
-}
+{"events":[{"title":"test event edit","image":"https://www.event-people.co.uk/wp-content/uploads/2016/04/shutterstock_252817174.jpg","date":"2023-04-27","description":"Test event edit test","id":"99533f71-7af2-42af-827b-4339bbeb8b67"}],"users":[{"email":"peter@abv.bg","password":"$2a$12$Z2AvObJIVQSnBo00yuEEbuJdovlOpbMNa7u7YtrjGk4DsZNvAYuTi","id":"c8e2ef1c-33a2-4137-9df0-7daa5e9681b0"},{"email":"simeon_rangelov@abv.bg","password":"$2a$12$Cgld0bVV6IKbb33Q8s6LcuU0lXplj6L/kJcnK5jQaZODjFJTfYXPy","id":"f8ba2017-5a81-4ba2-9506-8da286a03057"},{"email":"Ganec@abv.bg","password":"$2a$12$EBpeIswfkhY0NEbEKkKTZegfKY3CAQGC0P2Kf09zjwIIV5FFOD9wG","id":"f3949ae6-f4b7-4b17-b629-d057bf48b69b"}]}
