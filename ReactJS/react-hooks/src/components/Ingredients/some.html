@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<title>Closure</title>
+   
+<button id="button1">Increment Counter 1</button><button id="button2">Increment Counter 2</button>
+ 
+<script>
+ 
+    const createCountingMachine = (machineID) => {
+        let counter = 0;
+        return () => console.log(`CountingMachine no. ${machineID}:`, counter++);
+    }
+ 
+    const incrementCounter1 = createCountingMachine(1);
+    const incrementCounter2 = createCountingMachine(2);        
+ 
+    document.getElementById('button1').onclick = incrementCounter1;
+    document.getElementById('button2').onclick = incrementCounter2;    
+ 
+</script>
+
+
+<!-- 
+In a broader sense each JavaScript function is a closure, since it has all the capabilities out of the box which are described in my example below. But in a narrower sense we speak of a closure only in those cases where these very specific JavaScript capabilities are really used (which is not the case in your example, as far as I can see).
+
+In this basic example we have an outer createCountingMachine function returning an inner (anonymous) function.
+
+In createCountingMachine the variable counter is declared. counter is not directly accessible from outside and therefore it cannot be manipulated from outside.
+
+Considered superficially, it may appear obvious that the anonymous inner function which is returned by createCountingMachine has access to the variable counter and can increment it.
+
+However, if we take a closer look, it is not at all self-evident that this will work as intended in this case. - Here the real power of closures comes into play:
+
+Only the outer function is executed on page load, but the inner function isn't. The inner function is just containing those statements that should be executed when the user clicks on a button (which may be some years later ;) ). And at the time when this inner function will be executed, the outer function no longer exists. Nevertheless, the example works perfectly thanks to closures.
+
+What exactly is happening here?
+
+When createCountingMachine is called, it sets its counter to 0 and creates and returns the "blueprint" for the inner function (without calling it directly!). The return value of createCountingMachine() is stored in incrementCounter1 .
+
+At that time the counting machine is ready to use, and the outer function has fulfilled its duty. It is removed from memory by the garbage collector.
+
+When someone clicks on the first button later, incrementCounter1 is executed, and now this inner function tries to access the counter variable of the outer function - although this outer function has been forgotten for a long time and seems to have been completely destroyed and garbage collected without a trace, after the counting machine was created.
+
+And this is where a special mechanism comes into play: The JavaScript engine removed the outer function from the stack after the work was done, but noticed that someone might be interested in their variables in the future. For this reason it saved these variables and the final values of the outer function at a location in memory that cannot be reached otherwise, and the inner function was provided with an invisible reference to the execution context (which was prevented from being garbage collected in this way) of the former outer function.
+
+Thus the inner function holds this reference to the execution context (which is still existing even after the outer function's death), "enclosed" in itself (hence the name "closure"). It can access these variables and values, as you can see, not only in reading mode but also in writing mode - even though the outer function where these variables were once declared doesn't exist any longer.
+
+So you never have to write closures yourself, nor do you have to unlock them or something like this - they are just a welcome and very powerful feature of the programming language, which you have to understand in order to use it fruitfully.
+
+This allows you to program very elegantly and with a small amount of code. When running the code example above you will see that every call of the outer function creates a completely new counter machine. The different inner functions automatically "know" their different related execution contexts, so that the counters work independently of each other without interfering.
+
+Jost -->
