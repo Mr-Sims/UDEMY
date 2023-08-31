@@ -22,6 +22,9 @@ body {
   padding: 30px;
 }
 
+
+
+
 /* H E A D E R */
 
 .header {
@@ -41,6 +44,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
+
 /*HEADER - LOGO BOX*/
 .logo-box {
   position: absolute;
@@ -52,19 +56,22 @@ body {
   height: 35px;
 }
 
-/* HEADER - TEXT-BOX */
 
+
+/* HEADER - TEXT-BOX */
 .text-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
  color: #fff;
  text-transform: uppercase;
  backface-visibility: hidden;
+ margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -74,8 +81,6 @@ body {
   letter-spacing: 35px;
   animation: moveInRight 800ms ease-out;
 }
-
-
 
 .heading-primary-sub {
   display: block;
@@ -120,4 +125,75 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* HEADER discover button */
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+}
+
+.btn-white {
+  background-color: #fff; 
+  color: #777;
+  
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {      /* this here means that after will take effect only when the btn is hovered */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation-name: moveInUp;
+  animation-duration: 500ms; 
+  animation-timing-function: ease-out;
+  animation-delay: 750ms;
+  animation-fill-mode: backwards;
 }
