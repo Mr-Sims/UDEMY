@@ -235,7 +235,7 @@
           </div>
         </div>
       </section>
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">most popular tours</h2>
         </div>
@@ -265,9 +265,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$297</p>
                   </div>
-                  <a href="javascript:void(0)" class="btn btn--white"
-                    >Book now!</a
-                  >
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -297,9 +295,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$497</p>
                   </div>
-                  <a href="javascript:void(0)" class="btn btn--white"
-                    >Book now!</a
-                  >
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -329,9 +325,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$897</p>
                   </div>
-                  <a href="javascript:void(0)" class="btn btn--white"
-                    >Book now!</a
-                  >
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -529,5 +523,43 @@
         </div>
       </div>
     </footer>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img
+            src="https://images.unsplash.com/photo-1448518184296-a22facb4446f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="girl in a canoe"
+            class="popup__image"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1491484925566-336b202157a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="man looking at mountains"
+            class="popup__image"
+          />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            important &ndash; please read terms and conditions first
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            optio corrupti eveniet quod, vero, nesciunt vitae laborum inventore
+            nemo, quaerat consequuntur magni minus ab incidunt hic molestiae
+            eaque facilis ex? Quisquam optio corrupti eveniet quod, vero,
+            nesciunt vitae laborum inventore nemo, quaerat consequuntur magni
+            minus ab incidunt hic molestiae eaque facilis ex? Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Quisquam optio corrupti
+            eveniet quod, vero, nesciunt vitae laborum inventore nemo, quaerat
+            consequuntur magni minus ab incidunt hic molestiae eaque facilis ex?
+          </p>
+          <a href="javascript:void(0)" class="btn btn--green">book now</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
