@@ -76,6 +76,14 @@
                     $color-secondary-dark
                 ),
                 url("https://rare-gallery.com/thumbs/5381510-cliff-rock-sunset-sunrise-dawn-dusk-person-male-guy-man-sheer-rock-natural-arches-solitude-water-sand-standing-on-top-cloud-sea-exposure-public-domain-images.jpg");
+            @media (max-width: 56.25em) and (min-resolution: 192dpi) {
+                background-image: linear-gradient(
+                        to right bottom,
+                        $color-secondary-light,
+                        $color-secondary-dark
+                    ),
+                    url("../../img/card-1-small.jpg");
+            }
         }
         &--2 {
             background-image: linear-gradient(
@@ -84,6 +92,14 @@
                     $color-primary-dark
                 ),
                 url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+            @media (max-width: 56.25em) and (min-resolution: 192dpi) {
+                background-image: linear-gradient(
+                        to right bottom,
+                        $color-primary-light,
+                        $color-primary-dark
+                    ),
+                    url("../../img/card-2-small.jpg");
+            }
         }
         &--3 {
             background-image: linear-gradient(
@@ -92,6 +108,14 @@
                     $color-tertiary-dark
                 ),
                 url("https://images.unsplash.com/photo-1460891053196-b9d4d9483d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1799&q=80");
+            @media (max-width: 56.25em) and (min-resolution: 192dpi) {
+                background-image: linear-gradient(
+                        to right bottom,
+                        $color-tertiary-light,
+                        $color-tertiary-dark
+                    ),
+                    url("../../img/card-3-small.jpg");
+            }
         }
     }
 
@@ -183,31 +207,32 @@
         font-weight: 100;
     }
 
-    @include respond(tab-port) {
+    // @include respond(tab-port)
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover: none) {
         height: auto;
-		border-radius: 3px;
-		background-color: $color-white;
-		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
         &__side {
             height: auto;
             position: relative;
-			box-shadow: none;
+            box-shadow: none;
 
             &--back {
                 transform: rotateY(0deg);
-				clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
-			}
+                clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+            }
         }
 
         &:hover &__side--front {
             transform: rotateY(0deg);
         }
 
-		&__details {
-			padding: 0rem 3rem;
-		}
-        
+        &__details {
+            padding: 0rem 3rem;
+        }
 
         // BACK-SIDE STYLING
 
@@ -217,13 +242,13 @@
             left: 0;
             transform: translate(0);
             width: 100%;
-			padding: 7rem 4rem 4rem 4rem;
+            padding: 7rem 4rem 4rem 4rem;
         }
 
         &__price-box {
             margin-bottom: 3rem;
         }
-        
+
         &__price-value {
             font-size: 6rem;
         }
