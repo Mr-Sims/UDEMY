@@ -10,9 +10,12 @@
 @import "base/utilities";
 
 //components
+@import "components/legal-text";
 @import "components/logo";
 @import "components/search";
+@import "components/side-navigation";
 @import "components/user-navigation";
+
 
 //layout
 @import "layout/container";
