@@ -12,10 +12,28 @@
   --shadow-dark: 0 2rem 6rem rgb(0, 0, 0, .3);
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--color-primary);
 }
 
 *,
@@ -36,6 +54,32 @@ body {
   color: var(--color-grey-dark-2);
 }
 
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-inline:hover {
+  animation: pulsate 1s infinite;
+}
+.btn-inline:focus {
+  outline: none;
+}
+
+.gallery {
+  display: flex;
+}
+.gallery__photo {
+  width: 100%;
+  display: block;
+}
+
 .legal {
   font-size: 1.2rem;
   text-align: center;
@@ -46,6 +90,56 @@ body {
 .logo {
   height: 3.5rem;
   margin-left: 2rem;
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-grey-light-3);
+}
+.overview__heading {
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 3rem;
+}
+.overview__stars {
+  display: flex;
+  margin-right: auto;
+}
+.overview__icon-star, .overview__icon-location {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: var(--color-primary);
+}
+.overview__location {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.overview__icon-location {
+  margin-right: 0.5rem;
+}
+.overview__rating {
+  background-color: var(--color-primary);
+  margin-left: 3rem;
+  color: white;
+  align-self: stretch;
+  padding: 0 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.overview__rating-average {
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin-bottom: -3px;
+}
+.overview__rating-count {
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
 .search {
@@ -112,7 +206,7 @@ body {
   left: 0;
   background-color: var(--color-primary);
   transform: scaleY(0);
-  transition: transform 0.2s ease-out, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+  transition: transform 0.1s ease-out, width 0.2s cubic-bezier(1, 0, 0, 1) 0.15s, background-color 0.1s;
 }
 .side-nav__item:hover::before, .side-nav__item--active::before {
   transform: scaleY(1);
@@ -193,19 +287,88 @@ body {
   display: flex;
 }
 
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-3);
+  border-bottom: 1px solid var(--color-grey-light-3);
+}
+
+.description {
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+}
+
+.user-reviews {
+  background-color: yellowgreen;
+  flex-grow: 1;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-grey-light-3);
+  border-bottom: 1px solid var(--color-grey-light-3);
+  display: flex;
+  flex-wrap: wrap;
+}
+.list__item {
+  display: flex;
+  align-items: center;
+  flex: 0 0 50%;
+  margin-bottom: 0.7rem;
+}
+.list__item::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.7rem;
+  background-color: var(--color-primary);
+  -webkit-mask-image: url(../../img/svg/chevron-thin-right.svg);
+  mask-image: url(../../img/svg/chevron-thin-right.svg);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recommend__photo {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  outline: 3.5px solid #fff;
+}
+.recommend__photo:not(:last-child) {
+  margin-right: -1.5rem;
+}
+
 .header {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  border-bottom: var(--color-grey-light-2);
+  border-bottom: 1px solid var(--color-grey-light-2);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .hotel-view {
-  background-color: orangered;
-  height: 80rem;
+  background-color: #fff;
   flex-grow: 1;
 }
 

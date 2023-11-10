@@ -1,0 +1,9 @@
+.gallery {
+    display: flex;
+   
+    &__photo {
+        width: 100%;
+        display: block; // this will get rid of the small space underneath an image that occurs because the image is an inline element. Am image
+                        // should always be a block or an inline-block
+    }
+}

@@ -10,8 +10,11 @@
 @import "base/utilities";
 
 //components
+@import "components/btn-inline";
+@import "components/gallery";
 @import "components/legal-text";
 @import "components/logo";
+@import "components/overview";
 @import "components/search";
 @import "components/side-navigation";
 @import "components/user-navigation";
@@ -20,6 +23,7 @@
 //layout
 @import "layout/container";
 @import "layout/content";
+@import "layout/detail";
 @import "layout/header";
 @import "layout/hotel-view";
 @import "layout/sidebar";
