@@ -16,3 +16,10 @@
     //SHADOW
     --shadow-dark: 0 2rem 6rem rgb(0, 0, 0, .3);
 }
+
+
+$bp-largest: 75em;     // 1200px / 16px = 75rem
+$bp-large: 68.75em;    // 1100px / 16px = 68.75rem
+$bp-medium: 56.52em;   // 900px / 16px = 56.25  
+$bp-small: 37.5em;     // 600px / 16px = 37.5rem
+$bp-mini: 31.25em;        // 500px / 16px = 31.25em

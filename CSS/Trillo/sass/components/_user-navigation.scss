@@ -40,6 +40,13 @@
         align-items: center;
     }
 
+    // &__user {
+    //     @media only screen and (max-width: $bp-small) {
+    //         display: flex;
+    //         flex-direction: column;
+    //     }
+    // }
+
     &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
